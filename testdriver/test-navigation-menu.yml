@@ -1,0 +1,33 @@
+version: 4.2.13
+session: 67cc008219d282fbe88f6b58
+steps:
+  - prompt: Click on the "Store" link in the navigation menu.
+    commands:
+      - command: hover-text
+        text: ACCEPT ALL
+        description: accept all cookies button in the cookie consent dialog
+        action: click
+      - command: hover-text
+        text: STORE
+        description: store link in the navigation menu
+        action: click
+  - prompt: Assert that the Store page loads successfully.
+    commands:
+      - command: assert
+        expect: the F1 Store logo is visible
+  - prompt: Click on the "Drivers" link in the navigation menu.
+    commands:
+      - command: hover-text
+        text: Accept
+        description: accept button in the cookie consent dialog
+        action: click
+      - command: hover-text
+        text: SHOP BY DRIVER
+        description: drivers link in the navigation menu
+        action: click
+  - prompt: >-
+      Assert that the Drivers page loads successfully.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: the "SHOP BY DRIVER" text is visible
