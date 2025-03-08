@@ -1,0 +1,31 @@
+version: 4.2.13
+session: 67cc0083eb530f1807e32590
+steps:
+  - prompt: Close the cookie consent pop-up by clicking "Accept All".
+    commands:
+      - command: hover-text
+        text: ACCEPT ALL
+        description: accept all button on the cookie consent pop-up
+        action: click
+  - prompt: Assert that the pop-up is no longer visible.
+    commands:
+      - command: assert
+        expect: the cookie consent pop-up is not visible
+  - prompt: Reload the page.
+    commands:
+      - command: press-keys
+        keys:
+          - control
+          - r
+  - prompt: Reload the page.
+    commands:
+      - command: press-keys
+        keys:
+          - control
+          - r
+  - prompt: >-
+      Assert that the pop-up does not reappear.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: the cookie consent pop-up is not visible
