@@ -1,0 +1,15 @@
+version: 4.2.13
+session: 67cc0084eb530f1807e32592
+steps:
+  - prompt: Click the "Sign In" button at the top right corner.
+    commands:
+      - command: hover-text
+        text: SIGN IN
+        description: sign in button at the top right corner of the webpage
+        action: click
+  - prompt: Click the "Sign In" button at the top right corner.
+    commands:
+      - command: hover-text
+        text: ACCEPT ALL
+        description: accept all button on the cookie consent modal
+        action: click
